@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Interests</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease-in-out;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin-bottom: 50px;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        .intro-text {
+            color: white;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            width: 80%;
+            transition: all 0.5s ease-in-out;
+        }
+        .grid-item {
+            height: 150px;
+            width: 250px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: all 0.5s ease-in-out;
+            position: relative;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+        }
+        .grid-item:hover {
+            transform: scale(1.2);
+            z-index: 10;
+            border-color: rgba(0, 140, 255, 0.3);
+            box-shadow: 0 0 10px rgba(0, 140, 255, 0.2);
+        }
+        .grid-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid transparent;
+            box-sizing: border-box;
+            animation: borderLight 1.5s linear infinite;
+        }
+        @keyframes borderLight {
+            0% { border-top-color: rgba(0, 140, 255, 0.3); }
+            25% { border-right-color: rgba(0, 140, 255, 0.3); }
+            50% { border-bottom-color: rgba(0, 140, 255, 0.3); }
+            75% { border-left-color: rgba(0, 140, 255, 0.3); }
+            100% { border-top-color: rgba(0, 140, 255, 0.3); }
+        }
+        .grid-item:hover::after {
+            content: "Explore";
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.6em;
+            font-weight: bold;
+        }
+        .grid-container:hover .grid-item:not(:hover) {
+            filter: blur(5px);
+        }
+        .beaches {
+            background-image: url('https://getwallpapers.com/wallpaper/full/a/1/6/904876-most-beautiful-beach-wallpaper-2496x1518-photos.jpg');
+        }
+        
+        .temples {
+            background-image: url('https://www.greavesindia.com/wp-content/uploads/2017/06/26.KhajurahoTemples_credit-RNMitraiStock-httpwww.istockphoto.comgbphotokandariya-mahadeva-temple-khajuraho-india-unesco-world-heritage-site-gm540115304-96377381.jpg');
+        }
+        
+        .cultural {
+            background-image: url('https://www.holidaymonk.com/wp-content/uploads/2022/04/Holi-Festival-of-Colors.jpg');
+        }
+        
+        .waterfalls {
+            background-image: url('https://wallpapercave.com/wp/Q39U5o9.jpg');
+        }
+        
+        .adventure {
+            background-image: url('https://i.huffpost.com/gen/1866826/images/o-ADVENTURE-facebook.jpg');
+        }
+        
+        .wildlife {
+            background-image: url('https://en.bcdn.biz/Images/2013/9/6/7124fbb0-1526-48e4-aeb3-a0e39d7b90ac.jpg');
+        }
+        
+        .mountains {
+            background-image: url('https://getwallpapers.com/wallpaper/full/3/c/2/655531.jpg');
+        }
+        
+        .historical {
+            background-image: url('https://1.bp.blogspot.com/-ejS5FtLmmLU/UKtw0z6yM5I/AAAAAAAAAI0/DcF5pEKbGYQ/s1600/Historical+Places+in+india--Qutub_Minar.jpg');
+        }
+        
+        .islands {
+            background-image: url('https://wallup.net/wp-content/uploads/2015/12/194647-beach-island-nature-landscape.jpg');
+        }
+
+        .description {
+            color: rgba(255, 223, 0, 0.7);
+            margin-top: 20px;
+            font-size: 1em;
+            text-align: center;
+            width: 80%;
+        }
+        .grid-item a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Incredible India</h1>
+        <nav>
+            <ul>
+                <li><a href="#section1">Section 1</a></li>
+                <li><a href="#section2">Section 2</a></li>
+                <li><a href="#section3">Section 3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <p class="intro-text">Discover amazing destinations based on your interests!</p>
+    <div class="grid-container">
+        <div class="grid-item beaches" onclick="location.href='beach.html';"><a href="beach.html">Beaches</a></div>
+        <div class="grid-item temples" onclick="location.href='temple.html';"><a href="temple.html">Temples</a></div>
+        <div class="grid-item cultural" onclick="location.href='culture.html';"><a href="cultural.html">Cultural Sites</a></div>
+        <div class="grid-item waterfalls" onclick="location.href='waterfall.html';"><a href="waterfall.html">Waterfalls</a></div>
+        <div class="grid-item adventure" onclick="location.href='adventure.html';"><a href="adventure.html">Adventure</a></div>
+        <div class="grid-item wildlife" onclick="location.href='wildlife.html';"><a href="wildlife.html">Wildlife</a></div>
+        <div class="grid-item mountains" onclick="location.href='mountain.html';"><a href="mountain.html">Mountains</a></div>
+        <div class="grid-item historical" onclick="location.href='historical.html';"><a href="historical.html">Historical Places</a></div>
+        <div class="grid-item islands" onclick="location.href='island.html';"><a href="island.html">Islands</a></div>
+    </div>
+    <p class="description">Explore the beauty and diversity of India through its breathtaking landscapes, rich heritage, and thrilling adventures.</p>
+</body>
+</html>
