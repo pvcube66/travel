@@ -1,0 +1,23 @@
+# Robots.txt for Travel Advisory Website
+
+User-agent: *
+# Allow all main site content
+Allow: /
+
+# Disallow crawling of internal, duplicate, or test directories
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /temp/
+Disallow: /test/
+
+# Prevent crawling of URLs with duplicate session parameters (if applicable)
+Disallow: /*?sessionid=
+
+# Optional: Specify a crawl delay if needed (use with caution as it may slow indexing)
+# Crawl-delay: 10
+
+# Host directive for search engines that support it (e.g., Yandex)
+Host: www.exampletravel.com
+
+# Sitemap location for efficient crawling
+Sitemap: https://traveladvisersors.vercel.app/sitemap.xml
